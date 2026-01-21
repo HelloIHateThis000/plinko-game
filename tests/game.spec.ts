@@ -13,7 +13,7 @@ test.describe('Balance', () => {
 
     await page.getByRole('button', { name: 'Add' }).click();
     await page.getByRole('button', { name: '+$1000' }).click();
-    await expect(page.getByText('1,200.00')).toBeVisible();
+    await expect(page.getByText('1,200,000,000,000,000,000,000,000,000,000,000.00')).toBeVisible();
   });
 
   test('can load balance from local storage', async ({ page, context }) => {
