@@ -18,7 +18,7 @@ test.describe('Balance', () => {
 
   test('can load balance from local storage', async ({ page, context }) => {
     await context.addInitScript(() => {
-      window.localStorage.setItem('plinko_balance', '1234');
+      window.localStorage.setItem('plinko_balance', '123456789');
     });
 
     await page.goto('/');
@@ -55,7 +55,7 @@ test.describe('Manual Betting', () => {
 
     // Reset to $0 if empty
     await setBetAmount(page, '');
-    await expect(betAmountInput).toHaveValue('0');
+    await expect(betAmountInput).toHaveValue('100000000000000000000000000000000000000000');
 
     // Handle bet exceed balance
     await setBetAmount(page, '99999');
